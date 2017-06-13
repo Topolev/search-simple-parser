@@ -9,6 +9,7 @@ package typed.api.section;
 
 import typed.api.PropertyTree;
 import typed.api.Tree;
+import typed.api.literal.ValueTree;
 
 import java.util.List;
 
@@ -39,7 +40,7 @@ public interface ModuleSectionTree extends PropertyTree {
 
 
     // The only required configuration key for a module
-    Tree source();
+    ValueTree source();
 
     // Extracting all propertyTree from ObjectLiteral
     List<PropertyTree> metaParameters();
