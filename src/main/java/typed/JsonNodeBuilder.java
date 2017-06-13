@@ -25,7 +25,7 @@ import com.sonar.sslr.api.Trivia;
 import com.sonar.sslr.api.typed.Input;
 import com.sonar.sslr.api.typed.NodeBuilder;
 import org.sonar.sslr.grammar.GrammarRuleKey;
-import typed.impl.InternalSyntaxToken;
+import typed.impl.lexical.InternalSyntaxToken;
 
 import java.util.List;
 

@@ -20,54 +20,94 @@
 package typed;
 
 import com.sonar.sslr.api.typed.Optional;
-import typed.api.*;
-import typed.impl.*;
+import typed.api.PropertyTree;
+import typed.api.literal.BooleanLiteralTree;
+import typed.api.literal.ListLiteralTree;
+import typed.api.literal.MultilineStringLiteralTree;
+import typed.api.literal.NumberLiteralTree;
+import typed.api.literal.ObjectLiteralTree;
+import typed.api.literal.StringLiteralTree;
+import typed.api.literal.ValueTree;
+import typed.impl.PropertyTreeImpl;
+import typed.impl.lexical.InternalSyntaxToken;
+import typed.impl.literal.BooleanLiteralTreeImpl;
+import typed.impl.literal.ListLiteralTreeImpl;
+import typed.impl.literal.MultilineStringLiteralImpl;
+import typed.impl.literal.NumberLiteralTreeImpl;
+import typed.impl.literal.ObjectLiteralTreeImpl;
+import typed.impl.literal.StringLiteralTreeImpl;
+import typed.impl.literal.SyntaxList;
+import typed.impl.section.VariableSectionTreeImpl;
+
+import java.util.List;
 
 
 public class TreeFactory {
 
-  public JsonTree json(Tree arrayOrObject, InternalSyntaxToken eof) {
+  /*public JsonTree json(Tree arrayOrObject, InternalSyntaxToken eof) {
     return new JsonTreeImpl(arrayOrObject);
   }
 
-  public BuiltInValueTree buildInValue(InternalSyntaxToken token) {
-    return new BuiltInValueTreeImpl(token);
-  }
+ */
 
-  public LiteralTree number(InternalSyntaxToken token) {
-    return new LiteralTreeImpl(token);
-  }
+    private PropertyTree createPair(InternalSyntaxToken keyToken, List<StringLiteralTree> nestedObjects, ValueTree value) {
+        String key = keyToken.value();
+        switch (key) {
+            case "variable":
+                return new VariableSectionTreeImpl(keyToken, nestedObjects, value);
+            default: return new PropertyTreeImpl(keyToken, nestedObjects, value);
+        }
+    }
 
-  public LiteralTree string(InternalSyntaxToken token) {
-    return new LiteralTreeImpl(token);
-  }
+    /* Pattern: key = value */
+    public PropertyTree pair(InternalSyntaxToken key, List<StringLiteralTree> string, InternalSyntaxToken colonToken, ValueTree value) {
+        return new PropertyTreeImpl(key, string, colonToken, value);
+    }
 
-  public SyntaxList<ValueTree> valueList(ValueTree value) {
-    return new SyntaxList<>(value, null, null);
-  }
+    /* Pattern: key "nestedObject1" "nestedObject2" { } */
+    public PropertyTree pair(InternalSyntaxToken key, List<StringLiteralTree> string, ValueTree value) {
+        return new PropertyTreeImpl(key, string, value);
+    }
 
-  public SyntaxList<ValueTree> valueList(ValueTree value, InternalSyntaxToken commaToken, SyntaxList<ValueTree> next) {
-    return new SyntaxList<>(value, commaToken, next);
-  }
+    public ListLiteralTree array(InternalSyntaxToken openBracketToken, Optional<SyntaxList<ValueTree>> values, InternalSyntaxToken closeBracketToken) {
+        return new ListLiteralTreeImpl(openBracketToken, values.orNull(), closeBracketToken);
+    }
 
-  public ArrayTree array(InternalSyntaxToken openBracketToken, Optional<SyntaxList<ValueTree>> values, InternalSyntaxToken closeBracketToken) {
-    return new ArrayTreeImpl(openBracketToken, values.orNull(), closeBracketToken);
-  }
+    public SyntaxList<ValueTree> valueList(ValueTree value) {
+        return new SyntaxList<>(value, null, null);
+    }
 
-  public PairTree pair(LiteralTree string, InternalSyntaxToken colonToken, ValueTree value) {
-    return new PairTreeImpl(string, colonToken, value);
-  }
+    public SyntaxList<ValueTree> valueList(ValueTree value, InternalSyntaxToken commaToken, SyntaxList<ValueTree> next) {
+        return new SyntaxList<>(value, commaToken, next);
+    }
 
-  public SyntaxList<PairTree> pairList(PairTree pair) {
-    return new SyntaxList<>(pair, null, null);
-  }
+    public BooleanLiteralTree booleanLiteral(InternalSyntaxToken syntaxToken) {
+        return new BooleanLiteralTreeImpl(syntaxToken);
+    }
+
+    public NumberLiteralTree numberLiteralTree(InternalSyntaxToken syntaxToken) {
+        return new NumberLiteralTreeImpl(syntaxToken);
+    }
+
+    public StringLiteralTree stringLiteralTree(InternalSyntaxToken syntaxToken) {
+
+        return new StringLiteralTreeImpl(syntaxToken);
+    }
+
+    public MultilineStringLiteralTree multilineStringLiteralTree(InternalSyntaxToken syntaxToken) {
+        return new MultilineStringLiteralImpl(syntaxToken);
+    }
+
+    public SyntaxList<PropertyTree> pairList(PropertyTree pair) {
+        return new SyntaxList<>(pair, null, null);
+    }
 
 
-  public SyntaxList<PairTree> pairList(PairTree pair, InternalSyntaxToken commaToken, SyntaxList<PairTree> next) {
-    return new SyntaxList<>(pair, commaToken, next);
-  }
+    public SyntaxList<PropertyTree> pairList(PropertyTree pair, InternalSyntaxToken commaToken, SyntaxList<PropertyTree> next) {
+        return new SyntaxList<>(pair, commaToken, next);
+    }
 
-  public ObjectTree object(InternalSyntaxToken openCurlyBraceToken, Optional<SyntaxList<PairTree>> pairs, InternalSyntaxToken closeCurlyBraceToken) {
-    return new ObjectTreeImpl(openCurlyBraceToken, pairs.orNull(), closeCurlyBraceToken);
-  }
+    public ObjectLiteralTree objectLiteral(InternalSyntaxToken openCurlyBraceToken, Optional<SyntaxList<PropertyTree>> pairs, InternalSyntaxToken closeCurlyBraceToken) {
+        return new ObjectLiteralTreeImpl(openCurlyBraceToken, pairs.orNull(), closeCurlyBraceToken);
+    }
 }

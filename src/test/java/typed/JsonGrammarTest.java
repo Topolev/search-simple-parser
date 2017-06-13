@@ -19,27 +19,196 @@
  */
 package typed;
 
-import com.sonar.sslr.api.RecognitionException;
 import com.sonar.sslr.api.typed.ActionParser;
 import org.junit.Test;
-import typed.api.*;
-
-
-import java.nio.charset.StandardCharsets;
+import typed.api.PropertyTree;
+import typed.api.Tree;
+import typed.api.literal.BooleanLiteralTree;
+import typed.api.literal.ListLiteralTree;
+import typed.api.literal.NumberLiteralTree;
+import typed.api.literal.ObjectLiteralTree;
+import typed.api.literal.StringLiteralTree;
+import typed.api.literal.ValueTree;
+import typed.impl.literal.SyntaxList;
 
 import static org.fest.assertions.Assertions.assertThat;
+import static typed.TestUtils.checkBoolenLiteral;
+import static typed.TestUtils.checkNumberLiteral;
+import static typed.TestUtils.checkStringLiteral;
+import static typed.TestUtils.checkMultilineStringLiteral;
+
+import static typed.TestUtils.createParser;
+
 
 public class JsonGrammarTest {
 
-  private static ActionParser<Tree> parser = new ActionParser<>(
+  /*private static ActionParser<Tree> parser = new ActionParser<>(
       StandardCharsets.UTF_8,
       JsonLexer.createGrammarBuilder(),
       typed.JsonGrammar.class,
       new TreeFactory(),
       new JsonNodeBuilder(),
-      JsonLexer.JSON);
+      JsonLexer.BOOLEAN_LITERAL);*/
 
-  @Test
+
+    @Test
+    public void booleanLiteral() {
+        checkBoolenLiteral("true", true);
+        checkBoolenLiteral("false", false);
+    }
+
+    @Test
+    public void numberLiteral() {
+        // Decimal
+        checkNumberLiteral("1234567890", 1234567890f);
+        checkNumberLiteral("-1234567890", -1234567890f);
+
+        // Decimal in science notation
+        checkNumberLiteral("1E2", 100f);
+        checkNumberLiteral("1e2", 100f);
+        checkNumberLiteral("1e+2", 100f);
+        checkNumberLiteral("1e-2", 0.01f);
+        checkNumberLiteral("0.0123456789", 0.0123456789f);
+
+        // Hex
+        checkNumberLiteral("0xff", (float) 0xff);
+
+        // Oct
+        checkNumberLiteral("077", (float) 077);
+    }
+
+    @Test
+    public void stringLiteral() {
+        checkStringLiteral("\"test\"");
+        checkStringLiteral("\"\"");
+        checkStringLiteral("\"\\\"\"");
+        checkStringLiteral("\"\"");
+        checkStringLiteral("\"\\\"\"");
+        checkStringLiteral("\"\\\\\"");
+        checkStringLiteral("\"\\/\"");
+        checkStringLiteral("\"\\b\"");
+        checkStringLiteral("\"\\f\"");
+        checkStringLiteral("\"\\n\"");
+        checkStringLiteral("\"\\r\"");
+        checkStringLiteral("\"\\t\"");
+        checkStringLiteral("\"\\uFFFF\"");
+        checkStringLiteral("\"string\"");
+    }
+
+    @Test
+    public void multilineStringLiteral() {
+        checkMultilineStringLiteral("<<EOF test test EOF", "EOF", " test test ");
+        checkMultilineStringLiteral("<<EOF test \n \t \r \f test EOF", "EOF", " test \n \t \r \f test ");
+        checkMultilineStringLiteral("<<EOF test \n \t \r \f test EOF EOF", "EOF", " test \n \t \r \f test ");
+    }
+
+    @Test
+    public void valueTree() {
+        ActionParser<Tree> parser = createParser(JsonLexer.VALUE);
+
+        Tree numberLiteral = parser.parse("123456");
+        assertThat(numberLiteral.is(Tree.Kind.NUMBER_LITERAL));
+        assertThat(((NumberLiteralTree) numberLiteral).value()).isEqualTo(123456);
+
+        Tree stringLiteral = parser.parse("\"test\"");
+        assertThat(stringLiteral.is(Tree.Kind.STRING_LITERAL));
+        assertThat(((StringLiteralTree) stringLiteral).value()).isEqualTo("test");
+
+        Tree booleanLiteral = parser.parse("true");
+        assertThat(booleanLiteral.is(Tree.Kind.BOOLEAN_LITERAL));
+        assertThat(((BooleanLiteralTree) booleanLiteral).value()).isTrue();
+
+    }
+
+    @Test
+    public void valueListLiteral() {
+        ActionParser<Tree> parser = createParser(JsonLexer.VALUE_LIST);
+
+        SyntaxList valueList = (SyntaxList) parser.parse("12, \"string string string\", true");
+
+        assertThat(valueList.element().is(Tree.Kind.NUMBER_LITERAL));
+        assertThat(((NumberLiteralTree) valueList.element()).value()).isEqualTo(12);
+
+        valueList = valueList.next();
+        assertThat(valueList.element().is(Tree.Kind.STRING_LITERAL));
+        assertThat(((StringLiteralTree) valueList.element()).value()).isEqualTo("string string");
+
+        valueList = valueList.next();
+        assertThat(valueList.element().is(Tree.Kind.BOOLEAN_LITERAL));
+        assertThat(((BooleanLiteralTree) valueList.element()).value()).isTrue();
+    }
+
+    @Test
+    public void listLiteral() {
+        ActionParser<Tree> parser = createParser(JsonLexer.LIST_LITERAL);
+
+        Tree listLiteral = parser.parse("[12, \"string\", true]");
+        assertThat(listLiteral.is(Tree.Kind.LIST_LITERAL)).isTrue();
+
+        SyntaxList<ValueTree> valueList = ((ListLiteralTree) listLiteral).values();
+        assertThat(valueList.element().is(Tree.Kind.NUMBER_LITERAL)).isTrue();
+        assertThat(((NumberLiteralTree) valueList.element()).value()).isEqualTo(12);
+
+        valueList = valueList.next();
+        assertThat(valueList.element().is(Tree.Kind.STRING_LITERAL)).isTrue();
+        assertThat(((StringLiteralTree) valueList.element()).value()).isEqualTo("string");
+
+        valueList = valueList.next();
+        assertThat(valueList.element().is(Tree.Kind.BOOLEAN_LITERAL)).isTrue();
+        assertThat(((BooleanLiteralTree) valueList.element()).value()).isTrue();
+
+    }
+
+
+    @Test
+    public void property() {
+        ActionParser<Tree> parser = createParser(JsonLexer.PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL);
+        Tree property = parser.parse("test \"test\" \"test2\" = 12");
+
+        assertThat(property.is(Tree.Kind.PROPERTY)).isTrue();
+
+        Tree value = ((PropertyTree) property).value();
+        assertThat(value.is(Tree.Kind.NUMBER_LITERAL));
+        assertThat(((NumberLiteralTree) value).value()).isEqualTo(12);
+    }
+
+    @Test
+    public void propertyList() {
+        ActionParser<Tree> parser = createParser(JsonLexer.PROPERTY_LIST);
+        SyntaxList properties = (SyntaxList) parser.parse("\"test\" \"test2\" = 12 \n \"test\" \"test2\" = true");
+
+        assertThat(properties.element().is(Tree.Kind.PROPERTY)).isTrue();
+        Tree value = ((PropertyTree) properties.element()).value();
+        assertThat(value.is(Tree.Kind.NUMBER_LITERAL)).isTrue();
+        assertThat(((NumberLiteralTree) value).value()).isEqualTo(12);
+
+        properties = properties.next();
+        assertThat(properties.element().is(Tree.Kind.PROPERTY)).isTrue();
+        value = ((PropertyTree) properties.element()).value();
+        assertThat(value.is(Tree.Kind.BOOLEAN_LITERAL)).isTrue();
+        assertThat(((BooleanLiteralTree) value).value()).isTrue();
+    }
+
+    @Test
+    public void objectLiteral(){
+        ActionParser<Tree> parser = createParser(JsonLexer.OBJECT_LITERAL);
+        ObjectLiteralTree object =(ObjectLiteralTree) parser.parse("{\"test\" \"test2\" { \"key\"=true} \n \"test\" \"test2\" = true}");
+
+        assertThat(object.is(Tree.Kind.OBJECT_LITERAL)).isTrue();
+        assertThat(object.properties().size()).isEqualTo(2);
+
+        assertThat(object.properties().get(0).is(Tree.Kind.PROPERTY)).isTrue();
+        assertThat(object.properties().get(1).is(Tree.Kind.PROPERTY)).isTrue();
+
+    }
+
+
+
+
+
+
+
+  /*@Test
   public void number() throws Exception {
     assertLiteral("1234567890");
     assertLiteral("-1234567890");
@@ -136,6 +305,6 @@ public class JsonGrammarTest {
     ValueTree value = ((ArrayTree) tree.arrayOrObject()).values().element();
     assertThat(value).isInstanceOf(LiteralTree.class);
     assertThat(((LiteralTree) value).token().value()).isEqualTo(code);
-  }
+  }*/
 
 }

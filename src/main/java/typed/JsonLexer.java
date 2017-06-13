@@ -25,39 +25,58 @@ import org.sonar.sslr.grammar.LexerlessGrammarBuilder;
 
 public enum JsonLexer implements GrammarRuleKey {
 
-  JSON,
-  OBJECT,
-  ARRAY,
-  VALUE,
-  TRUE,
-  FALSE,
-  NULL,
-  STRING,
-  NUMBER,
+    WORD_LITERAL, // only for internal usage for detect keys which doesn't content ""
+    NUMBER_LITERAL,
+    BOOLEAN_LITERAL,
+    STRING_LITERAL,
+    MULTILINE_STRING_LITERAL,
+    LIST_LITERAL,
+    OBJECT_LITERAL,
 
-  LCURLYBRACE,
-  RCURLYBRACE,
-  LBRACKET,
-  RBRACKET,
-  COMMA,
-  COLON,
+    PROPERTY,
+    PAIR_WITH_VALUE_AS_OBJECT_LITERAL,
+    PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL,
 
-  EOF,
-  WHITESPACE,
 
-  ;
+    PROPERTY_LIST,
 
-  public static LexerlessGrammarBuilder createGrammarBuilder() {
-    LexerlessGrammarBuilder b = LexerlessGrammarBuilder.create();
+    VALUE_LIST,
+    WORD,
 
-    punctuator(b, LCURLYBRACE, "{");
-    punctuator(b, RCURLYBRACE, "}");
-    punctuator(b, LBRACKET, "[");
-    punctuator(b, RBRACKET, "]");
-    punctuator(b, COMMA, ",");
-    punctuator(b, COLON, ":");
+    /*JSON,*/
 
-    b.rule(TRUE).is("true", WHITESPACE);
+
+    VALUE,
+    TRUE,
+    FALSE,
+    /* NULL,*/
+    STRING,
+    MULTILINE_STRING,
+    NUMBER,
+
+    LCURLYBRACE,
+    RCURLYBRACE,
+    LBRACKET,
+    RBRACKET,
+    COMMA,
+    COLON,
+    EQUAL,
+
+    EOF,
+    WHITESPACE,;
+
+    public static LexerlessGrammarBuilder createGrammarBuilder(JsonLexer root) {
+        LexerlessGrammarBuilder b = LexerlessGrammarBuilder.create();
+
+        punctuator(b, LCURLYBRACE, "{");
+        punctuator(b, RCURLYBRACE, "}");
+        punctuator(b, LBRACKET, "[");
+        punctuator(b, RBRACKET, "]");
+        punctuator(b, COMMA, ",");
+        punctuator(b, COLON, ":");
+        punctuator(b, EQUAL, "=");
+
+    /*b.rule(TRUE).is("true", WHITESPACE);
     b.rule(FALSE).is("false", WHITESPACE);
     b.rule(NULL).is("null", WHITESPACE);
 
@@ -65,13 +84,26 @@ public enum JsonLexer implements GrammarRuleKey {
     b.rule(NUMBER).is(b.regexp("-?+(0|[1-9][0-9]*+)(\\.[0-9]++)?+([eE][+-]?+[0-9]++)?+"), WHITESPACE);
     b.rule(STRING).is(b.regexp("\"([^\"\\\\]|\\\\([\"\\\\/bfnrt]|u[0-9a-fA-F]{4}))*+\""), WHITESPACE);
 
-    b.rule(EOF).is(b.token(GenericTokenType.EOF, b.endOfInput()));
+    b.rule(EOF).is(b.token(GenericTokenType.EOF, b.endOfInput()));*/
 
-    b.setRootRule(JSON);
-    return b;
-  }
+        b.rule(TRUE).is("true", WHITESPACE);
+        b.rule(FALSE).is("false", WHITESPACE);
 
-  private static void punctuator(LexerlessGrammarBuilder b, GrammarRuleKey ruleKey, String value) {
-    b.rule(ruleKey).is(value, WHITESPACE);
-  }
+        b.rule(NUMBER).is(b.regexp(JsonRegExps.NUMERIC_LITERAL), WHITESPACE);
+        b.rule(STRING).is(b.regexp(JsonRegExps.STRING_LITERAL), WHITESPACE);
+        b.rule(MULTILINE_STRING).is(b.regexp(JsonRegExps.MULTILINE_STRING_LITERAL), WHITESPACE);
+
+        b.rule(WORD).is(b.regexp(JsonRegExps.WORD_LITERAL), WHITESPACE);
+
+
+        b.rule(WHITESPACE).is(b.regexp("[ \n\r\t\f]*+"));
+        b.rule(EOF).is(b.token(GenericTokenType.EOF, b.endOfInput()));
+
+        b.setRootRule(root);
+        return b;
+    }
+
+    private static void punctuator(LexerlessGrammarBuilder b, GrammarRuleKey ruleKey, String value) {
+        b.rule(ruleKey).is(value, WHITESPACE);
+    }
 }
