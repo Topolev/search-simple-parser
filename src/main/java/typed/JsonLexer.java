@@ -25,7 +25,6 @@ import org.sonar.sslr.grammar.LexerlessGrammarBuilder;
 
 public enum JsonLexer implements GrammarRuleKey {
 
-    WORD_LITERAL, // only for internal usage for detect keys which doesn't content ""
     NUMBER_LITERAL,
     BOOLEAN_LITERAL,
     STRING_LITERAL,
@@ -34,7 +33,7 @@ public enum JsonLexer implements GrammarRuleKey {
     OBJECT_LITERAL,
 
     PROPERTY,
-    PAIR_WITH_VALUE_AS_OBJECT_LITERAL,
+    //PAIR_WITH_VALUE_AS_OBJECT_LITERAL,
     PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL,
 
 

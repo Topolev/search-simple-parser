@@ -70,22 +70,22 @@ public class JsonGrammar {
     public PropertyTree PROPERTY() {
         return b.<PropertyTree>nonterminal(JsonLexer.PROPERTY).is(
                 b.firstOf(
-                        PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL(),
-                        PAIR_WITH_VALUE_AS_OBJECT_LITERAL()
+                        PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL()/*,
+                        PAIR_WITH_VALUE_AS_OBJECT_LITERAL()*/
                 ));
 
     }
 
-    /* key "nestedObject1" "nestedObject2" { } */
+    /*
     public PropertyTree PAIR_WITH_VALUE_AS_OBJECT_LITERAL() {
         return b.<PropertyTree>nonterminal(JsonLexer.PAIR_WITH_VALUE_AS_OBJECT_LITERAL).is(
-                f.pair(b.token(JsonLexer.WORD),b.oneOrMore(STRING_LITERAL()), OBJECT_LITERAL()));
-    }
+                f.pair(b.token(JsonLexer.WORD),b.zeroOrMore(STRING_LITERAL()).orNull(), OBJECT_LITERAL()));
+    }*/
 
-    /* key = 12 */
+
     public PropertyTree PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL() {
         return b.<PropertyTree>nonterminal(JsonLexer.PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL).is(
-                f.pair(b.token(JsonLexer.WORD), b.zeroOrMore(STRING_LITERAL()).orNull(), b.token(JsonLexer.EQUAL), VALUE()));
+                    f.pair(b.token(JsonLexer.WORD),b.zeroOrMore(STRING_LITERAL()), b.token(JsonLexer.EQUAL), VALUE()));
     }
 
     public ListLiteralTree LIST_LITERAL() {

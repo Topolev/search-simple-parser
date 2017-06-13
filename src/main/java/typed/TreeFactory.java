@@ -60,8 +60,8 @@ public class TreeFactory {
     }
 
     /* Pattern: key = value */
-    public PropertyTree pair(InternalSyntaxToken key, List<StringLiteralTree> string, InternalSyntaxToken colonToken, ValueTree value) {
-        return new PropertyTreeImpl(key, string, colonToken, value);
+    public PropertyTree pair(InternalSyntaxToken key, Optional<List<StringLiteralTree>> string, InternalSyntaxToken colonToken, ValueTree value) {
+        return new PropertyTreeImpl(key, string.orNull(), colonToken, value);
     }
 
     /* Pattern: key "nestedObject1" "nestedObject2" { } */

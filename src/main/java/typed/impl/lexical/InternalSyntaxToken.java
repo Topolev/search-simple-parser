@@ -20,6 +20,7 @@
 package typed.impl.lexical;
 
 
+import typed.api.Tree;
 import typed.api.lexical.SyntaxToken;
 import typed.impl.AbstractTree;
 
@@ -28,12 +29,16 @@ public class InternalSyntaxToken extends AbstractTree implements SyntaxToken {
   private String value;
 
   public InternalSyntaxToken(String value) {
-    super(Kind.TOKEN);
     this.value = value;
   }
 
   @Override
   public String value() {
     return value;
+  }
+
+  @Override
+  public Kind kind() {
+    return Kind.TOKEN;
   }
 }
