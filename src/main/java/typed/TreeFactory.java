@@ -37,6 +37,7 @@ import typed.impl.literal.NumberLiteralTreeImpl;
 import typed.impl.literal.ObjectLiteralTreeImpl;
 import typed.impl.literal.StringLiteralTreeImpl;
 import typed.impl.literal.SyntaxList;
+import typed.impl.section.DataSourceSectionTreeImpl;
 import typed.impl.section.VariableSectionTreeImpl;
 
 import java.util.List;
@@ -55,6 +56,8 @@ public class TreeFactory {
         switch (key) {
             case "variable":
                 return new VariableSectionTreeImpl(keyToken, nestedObjects.orNull(), value);
+            case "data":
+                return new DataSourceSectionTreeImpl(keyToken, nestedObjects.orNull(), value);
             default:
                 return new PropertyTreeImpl(keyToken, nestedObjects.orNull(), value);
         }
