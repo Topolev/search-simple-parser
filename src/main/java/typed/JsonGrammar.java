@@ -70,22 +70,21 @@ public class JsonGrammar {
     public PropertyTree PROPERTY() {
         return b.<PropertyTree>nonterminal(JsonLexer.PROPERTY).is(
                 b.firstOf(
-                        PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL()/*,
-                        PAIR_WITH_VALUE_AS_OBJECT_LITERAL()*/
+                        PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL(),
+                        PAIR_WITH_VALUE_AS_OBJECT_LITERAL()
                 ));
 
     }
 
-    /*
-    public PropertyTree PAIR_WITH_VALUE_AS_OBJECT_LITERAL() {
-        return b.<PropertyTree>nonterminal(JsonLexer.PAIR_WITH_VALUE_AS_OBJECT_LITERAL).is(
-                f.pair(b.token(JsonLexer.WORD),b.zeroOrMore(STRING_LITERAL()).orNull(), OBJECT_LITERAL()));
-    }*/
-
 
     public PropertyTree PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL() {
         return b.<PropertyTree>nonterminal(JsonLexer.PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL).is(
-                    f.pair(b.token(JsonLexer.WORD),b.zeroOrMore(STRING_LITERAL()), b.token(JsonLexer.EQUAL), VALUE()));
+                f.pair(b.token(JsonLexer.WORD), b.token(JsonLexer.EQUAL), b.firstOf(VALUE(), OBJECT_LITERAL())));
+    }
+
+    public PropertyTree PAIR_WITH_VALUE_AS_OBJECT_LITERAL() {
+        return b.<PropertyTree>nonterminal(JsonLexer.PAIR_WITH_VALUE_AS_OBJECT_LITERAL).is(
+                f.pair(b.token(JsonLexer.WORD), b.zeroOrMore(STRING_LITERAL()), OBJECT_LITERAL()));
     }
 
     public ListLiteralTree LIST_LITERAL() {
@@ -99,8 +98,8 @@ public class JsonGrammar {
     public SyntaxList<ValueTree> VALUE_LIST() {
         return b.<SyntaxList<ValueTree>>nonterminal(JsonLexer.VALUE_LIST).is(
                 b.firstOf(
-                        f.valueList(VALUE(), b.token(JsonLexer.COMMA), VALUE_LIST()),
-                        f.valueList(VALUE())));
+                        f.valueList(b.firstOf(VALUE(), OBJECT_LITERAL()), b.token(JsonLexer.COMMA), VALUE_LIST()),
+                        f.valueList(b.firstOf(VALUE(), OBJECT_LITERAL()))));
     }
 
 
@@ -111,8 +110,8 @@ public class JsonGrammar {
                         MULTILINE_STRING_LITERAL(),
                         BOOLEAN_LITERAL(),
                         NUMBER_LITERAL(),
-                        LIST_LITERAL(),
-                        OBJECT_LITERAL()
+                        LIST_LITERAL()
+                        //OBJECT_LITERAL()
                 ));
     }
 
@@ -133,7 +132,7 @@ public class JsonGrammar {
         return b.<StringLiteralTree>nonterminal(JsonLexer.STRING_LITERAL).is(
                 f.stringLiteralTree(
                         b.token(JsonLexer.STRING)
-                        )
+                )
         );
     }
 

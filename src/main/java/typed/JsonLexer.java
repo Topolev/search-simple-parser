@@ -33,7 +33,7 @@ public enum JsonLexer implements GrammarRuleKey {
     OBJECT_LITERAL,
 
     PROPERTY,
-    //PAIR_WITH_VALUE_AS_OBJECT_LITERAL,
+    PAIR_WITH_VALUE_AS_OBJECT_LITERAL,
     PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL,
 
 
@@ -42,13 +42,10 @@ public enum JsonLexer implements GrammarRuleKey {
     VALUE_LIST,
     WORD,
 
-    /*JSON,*/
-
-
     VALUE,
     TRUE,
     FALSE,
-    /* NULL,*/
+
     STRING,
     MULTILINE_STRING,
     NUMBER,

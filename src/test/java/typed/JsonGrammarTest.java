@@ -107,15 +107,15 @@ public class JsonGrammarTest {
         ActionParser<Tree> parser = createParser(JsonLexer.VALUE);
 
         Tree numberLiteral = parser.parse("123456");
-        assertThat(numberLiteral.is(Tree.Kind.NUMBER_LITERAL));
+        assertThat(numberLiteral.is(Tree.Kind.NUMBER_LITERAL)).isTrue();
         assertThat(((NumberLiteralTree) numberLiteral).value()).isEqualTo(123456);
 
         Tree stringLiteral = parser.parse("\"test\"");
-        assertThat(stringLiteral.is(Tree.Kind.STRING_LITERAL));
+        assertThat(stringLiteral.is(Tree.Kind.STRING_LITERAL)).isTrue();
         assertThat(((StringLiteralTree) stringLiteral).value()).isEqualTo("test");
 
         Tree booleanLiteral = parser.parse("true");
-        assertThat(booleanLiteral.is(Tree.Kind.BOOLEAN_LITERAL));
+        assertThat(booleanLiteral.is(Tree.Kind.BOOLEAN_LITERAL)).isTrue();
         assertThat(((BooleanLiteralTree) booleanLiteral).value()).isTrue();
 
     }
@@ -126,15 +126,15 @@ public class JsonGrammarTest {
 
         SyntaxList valueList = (SyntaxList) parser.parse("12, \"string string string\", true");
 
-        assertThat(valueList.element().is(Tree.Kind.NUMBER_LITERAL));
+        assertThat(valueList.element().is(Tree.Kind.NUMBER_LITERAL)).isTrue();
         assertThat(((NumberLiteralTree) valueList.element()).value()).isEqualTo(12);
 
         valueList = valueList.next();
-        assertThat(valueList.element().is(Tree.Kind.STRING_LITERAL));
+        assertThat(valueList.element().is(Tree.Kind.STRING_LITERAL)).isTrue();
         assertThat(((StringLiteralTree) valueList.element()).value()).isEqualTo("string string string");
 
         valueList = valueList.next();
-        assertThat(valueList.element().is(Tree.Kind.BOOLEAN_LITERAL));
+        assertThat(valueList.element().is(Tree.Kind.BOOLEAN_LITERAL)).isTrue();
         assertThat(((BooleanLiteralTree) valueList.element()).value()).isTrue();
     }
 
@@ -160,22 +160,29 @@ public class JsonGrammarTest {
     }
 
 
-   /* @Test
+    @Test
     public void property() {
-        ActionParser<Tree> parser = createParser(JsonLexer.PAIR_WITH_VALUE_AS_NON_OBJECT_LITERAL);
-        Tree property = parser.parse("test \"test\" \"test2\" = 12");
+        ActionParser<Tree> parser = createParser(JsonLexer.PROPERTY);
+        Tree property = parser.parse("test = 12");
 
         assertThat(property.is(Tree.Kind.PROPERTY)).isTrue();
 
         Tree value = ((PropertyTree) property).value();
-        assertThat(value.is(Tree.Kind.NUMBER_LITERAL));
+        assertThat(value.is(Tree.Kind.NUMBER_LITERAL)).isTrue();
         assertThat(((NumberLiteralTree) value).value()).isEqualTo(12);
-    }*/
+
+        Tree property2 = parser.parse("key \"object1\" \"object2\" {key3 = 14  key4=2}");
+        assertThat(property2.is(Tree.Kind.PROPERTY)).isTrue();
+        Tree value2 = ((PropertyTree) property2).value();
+        assertThat(value2.is(Tree.Kind.OBJECT_LITERAL)).isTrue();
+        assertThat(((ObjectLiteralTree) value2).properties().size()).isEqualTo(2);
+
+    }
 
     @Test
     public void propertyList() {
         ActionParser<Tree> parser = createParser(JsonLexer.PROPERTY_LIST);
-        SyntaxList properties = (SyntaxList) parser.parse("test \"test2\" = 12 \n test \"test2\" = true");
+        SyntaxList properties = (SyntaxList) parser.parse("key1 = 12 \n key2 = {}");
 
         assertThat(properties.element().is(Tree.Kind.PROPERTY)).isTrue();
         Tree value = ((PropertyTree) properties.element()).value();
@@ -185,8 +192,7 @@ public class JsonGrammarTest {
         properties = properties.next();
         assertThat(properties.element().is(Tree.Kind.PROPERTY)).isTrue();
         value = ((PropertyTree) properties.element()).value();
-        assertThat(value.is(Tree.Kind.BOOLEAN_LITERAL)).isTrue();
-        assertThat(((BooleanLiteralTree) value).value()).isTrue();
+        assertThat(value.is(Tree.Kind.OBJECT_LITERAL)).isTrue();
     }
 
     @Test
