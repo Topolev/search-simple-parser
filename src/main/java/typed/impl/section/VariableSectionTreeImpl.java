@@ -8,13 +8,9 @@ package typed.impl.section;
 
 
 
-import typed.api.PropertyTree;
-import typed.api.Tree;
 import typed.api.literal.StringLiteralTree;
 import typed.api.literal.ValueTree;
 import typed.api.section.VariableSectionTree;
-import typed.impl.AbstractTree;
-import typed.impl.PropertyTreeImpl;
 import typed.impl.lexical.InternalSyntaxToken;
 
 import java.util.List;
@@ -27,11 +23,17 @@ import java.util.List;
  *          [description = DESCRIPTION] - optional
  *      }
  * */
-public class VariableSectionTreeImpl extends PropertyTreeImpl implements VariableSectionTree {
+public class VariableSectionTreeImpl extends AbstractSectionTree implements VariableSectionTree {
+
+
+    private final static String META_PARAMETER_TYPE = "type";
+    private final static String META_PARAMETER_DEFAULT = "default";
+    private final static String META_PARAMETER_DESCRIPTION = "description";
+
 
 
     public VariableSectionTreeImpl(InternalSyntaxToken keyToken, List<StringLiteralTree> nestedObjects, ValueTree value) {
-        super(keyToken, nestedObjects, value);
+        super(keyToken, nestedObjects, null, value);
     }
 
 
@@ -42,21 +44,21 @@ public class VariableSectionTreeImpl extends PropertyTreeImpl implements Variabl
 
     @Override
     public String name() {
-        return key;
+        return ((StringLiteralTree)nestedObjects().get(0)).value();
     }
 
     @Override
-    public Tree type() {
-        return null;
+    public String type() {
+        return getStringFromMetaParameter(META_PARAMETER_TYPE);
     }
 
     @Override
-    public Tree defaultValue() {
-        return null;
+    public ValueTree defaultValue() {
+        return getValueFromMetaParameter(META_PARAMETER_DEFAULT);
     }
 
     @Override
-    public Tree description() {
-        return null;
+    public ValueTree description() {
+        return getValueFromMetaParameter(META_PARAMETER_DESCRIPTION);
     }
 }

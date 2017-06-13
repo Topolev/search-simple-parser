@@ -9,6 +9,7 @@ package typed.api.section;
 
 import typed.api.PropertyTree;
 import typed.api.Tree;
+import typed.api.literal.ValueTree;
 
 /**
  *  More info see: https://www.terraform.io/docs/configuration/variables.html
@@ -44,25 +45,24 @@ public interface VariableSectionTree extends PropertyTree {
     String name();
 
     /**
-     * A convenient way to extract appropriate property from ObjectLiteral of PropertyTree
+     * A convenient way to extract an appropriate value of property from ObjectLiteral
      *
      * According the documentation the type might be omitted by user
      * but in this case the variable type will be inferred based on the defaultValue.
-     * If defaultValue is no provided the type will be as 'string'
      */
-    Tree type();
+    String type();
 
     /**
-     * A convenient way to extract appropriate property from ObjectLiteral of PropertyTree
+     * A convenient way to extract an appropriate value of property from ObjectLiteral
      *
      * The value might be omitted and injected from command line, for example
      * */
-    Tree defaultValue();
+    ValueTree defaultValue();
 
     /**
-     * A convenient way to extract appropriate property from ObjectLiteral of PropertyTree
+     * A convenient way to extract an appropriate value of property from ObjectLiteral
      *
      * An optional property
      * */
-    Tree description();
+    ValueTree description();
 }

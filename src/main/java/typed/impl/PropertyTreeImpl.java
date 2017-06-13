@@ -6,10 +6,8 @@ import typed.api.Tree;
 import typed.api.literal.StringLiteralTree;
 import typed.api.literal.ValueTree;
 import typed.impl.lexical.InternalSyntaxToken;
-import typed.impl.literal.StringLiteralTreeImpl;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class PropertyTreeImpl extends AbstractTree implements PropertyTree {
 
@@ -40,7 +38,7 @@ public class PropertyTreeImpl extends AbstractTree implements PropertyTree {
     }
 
     @Override
-    public Tree value() {
+    public ValueTree value() {
         return value;
     }
 

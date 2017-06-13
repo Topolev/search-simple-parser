@@ -50,12 +50,13 @@ public class TreeFactory {
 
  */
 
-    private PropertyTree createPair(InternalSyntaxToken keyToken, List<StringLiteralTree> nestedObjects, ValueTree value) {
+    private PropertyTree createPair(InternalSyntaxToken keyToken, Optional<List<StringLiteralTree>> nestedObjects, ValueTree value) {
         String key = keyToken.value();
         switch (key) {
             case "variable":
-                return new VariableSectionTreeImpl(keyToken, nestedObjects, value);
-            default: return new PropertyTreeImpl(keyToken, nestedObjects, value);
+                return new VariableSectionTreeImpl(keyToken, nestedObjects.orNull(), value);
+            default:
+                return new PropertyTreeImpl(keyToken, nestedObjects.orNull(), value);
         }
     }
 
@@ -66,7 +67,7 @@ public class TreeFactory {
 
     /* Pattern: key "nestedObject1" "nestedObject2" { } */
     public PropertyTree pair(InternalSyntaxToken key, Optional<List<StringLiteralTree>> string, ValueTree value) {
-        return new PropertyTreeImpl(key, string.orNull(), value);
+        return createPair(key, string, value);
     }
 
     public ListLiteralTree array(InternalSyntaxToken openBracketToken, Optional<SyntaxList<ValueTree>> values, InternalSyntaxToken closeBracketToken) {
