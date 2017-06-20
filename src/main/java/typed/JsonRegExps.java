@@ -19,10 +19,11 @@ public class JsonRegExps {
             + "|-?+[0-9]++"
             + ")";
 
-    public static final String STRING_LITERAL = "(?:\"([^\"\\\\]*+(\\\\[\\s\\S])?+)*+\")";
+    public static final String STRING_LITERAL = "(?:\"(?>(\\$\\{[^}]*\\})|(((?>\\\\[\\s\\S])|[^\"\\$])*))*+\")";
 
     public static final String WORD_LITERAL = "(?:[\\w]+(?==)|(?<![\\S\"])([^=\"\\d\\s][^=\"\\s]+)(?![\\S\"]))";
 
 
     public static final String MULTILINE_STRING_LITERAL = "<<([\\w]+)([\\w\\s]*?)\\1";
 }
+//"(?:\"([^\"\\\\]*+(\\\\[\\s\\S])?+)*+\")";

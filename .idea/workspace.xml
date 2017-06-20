@@ -2,37 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa62c207-6449-4ee0-9e64-45eab602015e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/JsonGrammar.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/JsonLexer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/JsonNodeBuilder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/JsonRegExps.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/PropertyTree.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/Tree$Kind.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/Tree.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/TreeFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/api/lexical/SyntaxToken.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/api/literal/BooleanLiteralTree.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/api/literal/ListLiteralTree.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/api/literal/MultilineStringLiteralTree.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/api/literal/NumberLiteralTree.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/api/literal/ObjectLiteralTree.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/api/literal/StringLiteralTree.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/api/literal/ValueTree.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/impl/AbstractTree.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/impl/PropertyTreeImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/impl/lexical/InternalSyntaxToken.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/impl/literal/BooleanLiteralTreeImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/impl/literal/ListLiteralTreeImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/impl/literal/MultilineStringLiteralImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/impl/literal/NumberLiteralTreeImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/impl/literal/ObjectLiteralTreeImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/impl/literal/StringLiteralTreeImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/typed/impl/literal/SyntaxList.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/typed/JsonGrammarTest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/typed/TestUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/typed/JsonLexer.class" afterPath="$PROJECT_DIR$/target/classes/typed/JsonLexer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/typed/JsonRegExps.class" afterPath="$PROJECT_DIR$/target/classes/typed/JsonRegExps.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/typed/JsonRegExps.java" afterPath="$PROJECT_DIR$/src/main/java/typed/JsonRegExps.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java" afterPath="$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +26,8 @@
       <file leaf-file-name="JsonGrammarTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2250">
-              <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+            <state relative-caret-position="235">
+              <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,13 +35,37 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="JsonRegExps.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/typed/JsonRegExps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="109" lean-forward="false" selection-start-line="21" selection-start-column="109" selection-end-line="21" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/typed/TestUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TreeFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/typed/TreeFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
+            <state relative-caret-position="450">
               <caret line="48" column="3" lean-forward="false" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#4889#0" expanded="false" />
+                <element signature="e#3445#3446#0" expanded="false" />
+                <element signature="e#3503#3504#0" expanded="false" />
+                <element signature="e#4356#4357#0" expanded="false" />
+                <element signature="e#4413#4414#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -73,12 +74,11 @@
       <file leaf-file-name="ObjectLiteralTreeImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/ObjectLiteralTreeImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="50" column="46" lean-forward="true" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+            <state relative-caret-position="555">
+              <caret line="50" column="46" lean-forward="false" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2656#2657#0" expanded="true" />
-                <element signature="e#2698#2699#0" expanded="true" />
+                <element signature="e#1214#1215#0" expanded="false" />
+                <element signature="e#1247#1248#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -87,37 +87,10 @@
       <file leaf-file-name="AlternativeListLiteralTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/literal/AlternativeListLiteralTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="285">
+              <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MultilineStringLiteralImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/MultilineStringLiteralImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#930#931#0" expanded="true" />
-                <element signature="e#982#983#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NumberLiteralTreeImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/NumberLiteralTreeImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1331#1332#0" expanded="true" />
-                <element signature="e#1373#1374#0" expanded="true" />
+                <element signature="e#0#720#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -126,11 +99,12 @@
       <file leaf-file-name="StringLiteralTreeImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/StringLiteralTreeImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
+            <state relative-caret-position="150">
               <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
-                <element signature="e#690#691#0" expanded="true" />
-                <element signature="e#732#733#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#622#623#0" expanded="false" />
+                <element signature="e#650#651#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -153,7 +127,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#487#488#0" expanded="false" />
+                <element signature="e#517#518#0" expanded="false" />
+                <element signature="e#570#571#0" expanded="false" />
+                <element signature="e#603#604#0" expanded="false" />
+                <element signature="e#649#650#0" expanded="false" />
+                <element signature="e#676#677#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,12 +143,14 @@
       <file leaf-file-name="AlternativeListLiteralTreeImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/AlternativeListLiteralTreeImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="210">
               <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#467#468#0" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
+                <element signature="e#0#676#0" expanded="false" />
+                <element signature="e#551#552#0" expanded="false" />
+                <element signature="e#580#581#0" expanded="false" />
+                <element signature="e#620#621#0" expanded="false" />
+                <element signature="e#672#673#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -228,9 +212,7 @@
         <option value="$PROJECT_DIR$/src/main/java/typed/Tree.java" />
         <option value="$PROJECT_DIR$/src/main/java/typed/PropertyTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/typed/impl/literal/WordLiteralTreeImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/typed/JsonRegExps.java" />
         <option value="$PROJECT_DIR$/src/main/java/typed/JsonLexer.java" />
-        <option value="$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/typed/JsonGrammar.java" />
         <option value="$PROJECT_DIR$/src/main/java/typed/api/section/TerraformConfigurationSectionTreeImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/typed/api/section/DataSourcesSectionTree.java" />
@@ -259,6 +241,8 @@
         <option value="$PROJECT_DIR$/src/main/java/typed/impl/literal/AlternativeListLiteralTreeImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/typed/api/literal/AlternativeListLiteralTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/typed/impl/literal/ObjectLiteralTreeImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/typed/JsonRegExps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java" />
       </list>
     </option>
   </component>
@@ -290,8 +274,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -520,6 +502,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -552,7 +536,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/typed/api" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JsonGrammarTest.property">
+  <component name="RunManager" selected="JUnit.JsonGrammarTest.stringLiteral">
     <configuration default="false" name="JsonGrammarTest.property" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -566,32 +550,6 @@
       <option name="PACKAGE_NAME" value="typed" />
       <option name="MAIN_CLASS_NAME" value="typed.JsonGrammarTest" />
       <option name="METHOD_NAME" value="property" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="JsonGrammarTest.propertyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="typed.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="search-simple-parser" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="typed" />
-      <option name="MAIN_CLASS_NAME" value="typed.JsonGrammarTest" />
-      <option name="METHOD_NAME" value="propertyList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -670,6 +628,32 @@
       <option name="PACKAGE_NAME" value="typed" />
       <option name="MAIN_CLASS_NAME" value="typed.JsonGrammarTest" />
       <option name="METHOD_NAME" value="valueListLiteral" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="JsonGrammarTest.stringLiteral" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="typed.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="search-simple-parser" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="typed" />
+      <option name="MAIN_CLASS_NAME" value="typed.JsonGrammarTest" />
+      <option name="METHOD_NAME" value="stringLiteral" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1081,18 +1065,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.property" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.propertyList" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.objectLiteral" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.valueListLiteral" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.objectLiteral" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.valueListLiteral" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.stringLiteral" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.property" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.valueListLiteral" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.objectLiteral" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.propertyList" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.stringLiteral" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.property" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.valueListLiteral" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.JsonGrammarTest.objectLiteral" />
       </list>
     </recent_temporary>
   </component>
@@ -1110,6 +1094,7 @@
       <workItem from="1497266540058" duration="82000" />
       <workItem from="1497266656748" duration="12655000" />
       <workItem from="1497333774967" duration="24898000" />
+      <workItem from="1497940519689" duration="2813000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 2">
       <created>1497365513580</created>
@@ -1129,20 +1114,20 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JsonGrammarTest_property - 2017.06.13 at 14h 33m 17s.xml">
-      <configuration name="JsonGrammarTest.property" configurationId="JUnit" />
+    <history-entry file="JsonGrammarTest_stringLiteral - 2017.06.20 at 09h 35m 47s.xml">
+      <configuration name="JsonGrammarTest.stringLiteral" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JsonGrammarTest_property - 2017.06.13 at 14h 35m 18s.xml">
-      <configuration name="JsonGrammarTest.property" configurationId="JUnit" />
+    <history-entry file="JsonGrammarTest_stringLiteral - 2017.06.20 at 09h 36m 40s.xml">
+      <configuration name="JsonGrammarTest.stringLiteral" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JsonGrammarTest_property - 2017.06.13 at 15h 57m 01s.xml">
-      <configuration name="JsonGrammarTest.property" configurationId="JUnit" />
+    <history-entry file="JsonGrammarTest_stringLiteral - 2017.06.20 at 10h 15m 21s.xml">
+      <configuration name="JsonGrammarTest.stringLiteral" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JsonGrammarTest_valueListLiteral - 2017.06.13 at 14h 02m 47s.xml">
-      <configuration name="JsonGrammarTest.valueListLiteral" configurationId="JUnit" />
+    <history-entry file="JsonGrammarTest_stringLiteral - 2017.06.20 at 10h 26m 41s.xml">
+      <configuration name="JsonGrammarTest.stringLiteral" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JsonGrammarTest_valueListLiteral - 2017.06.13 at 14h 03m 37s.xml">
-      <configuration name="JsonGrammarTest.valueListLiteral" configurationId="JUnit" />
+    <history-entry file="JsonGrammarTest_stringLiteral - 2017.06.20 at 10h 27m 32s.xml">
+      <configuration name="JsonGrammarTest.stringLiteral" configurationId="JUnit" />
     </history-entry>
     <history-entry file="JsonGrammarTest_valueListLiteral - 2017.06.13 at 14h 23m 07s.xml">
       <configuration name="JsonGrammarTest.valueListLiteral" configurationId="JUnit" />
@@ -1161,7 +1146,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53925000" />
+    <option name="totallyTimeSpent" value="56738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -1176,20 +1161,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31343284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31730238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1213,7 +1198,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java</url>
-          <line>303</line>
+          <line>305</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1224,37 +1209,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java</url>
-          <line>106</line>
+          <line>108</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java</url>
-          <line>135</line>
+          <line>137</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java</url>
-          <line>165</line>
+          <line>167</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java</url>
-          <line>170</line>
+          <line>172</line>
           <properties />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java</url>
-          <line>128</line>
+          <line>130</line>
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java</url>
-          <line>124</line>
+          <line>126</line>
           <properties />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
@@ -1280,35 +1265,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/WordLiteralTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/typed/TestUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/WordLiteralTreeImpl.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/JsonRegExps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1325,97 +1286,27 @@
         <state relative-caret-position="390">
           <caret line="86" column="87" lean-forward="false" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="87" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1879#1898#0" expanded="true" />
-            <element signature="e#2210#2236#0" expanded="true" />
-            <element signature="e#2508#2522#0" expanded="true" />
-            <element signature="e#2867#2881#0" expanded="true" />
-            <element signature="e#3149#3163#0" expanded="true" />
-            <element signature="e#3422#3439#0" expanded="true" />
-            <element signature="e#5162#5190#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1879#1898#0" expanded="false" />
+            <element signature="e#2210#2236#0" expanded="false" />
+            <element signature="e#2508#2522#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/ResourceSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/OutputSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/TerraformEnterpriseConfigurationSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/ModuleSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/ProviderSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/DataSourcesSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/VariableSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/TerraformConfigurationSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/AbstractSectionTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/ResourceSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/OutputSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/TerraformEnterpriseConfigurationSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/ModuleSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/ProviderSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/DataSourcesSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/VariableSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/TerraformConfigurationSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/AbstractSectionTree.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/DataSourcesSectionTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="64" column="6" lean-forward="false" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1423,9 +1314,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1433,27 +1321,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
           <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/PropertyTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/PropertyTree.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/section/ProviderSectionTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="43" column="5" lean-forward="false" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1461,9 +1336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
           <caret line="68" column="6" lean-forward="false" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1471,9 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1481,9 +1350,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="28" column="7" lean-forward="false" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1491,36 +1357,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="52" column="6" lean-forward="false" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/ResourceSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/OutputSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/TerraformEnterpriseConfigurationSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/ResourceSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/OutputSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/TerraformEnterpriseConfigurationSectionTreeImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/ModuleSectionTreeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1529,22 +1371,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/ProviderSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/TerraformConfigurationSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/ProviderSectionTreeImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/TerraformConfigurationSectionTreeImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/AbstractTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1561,30 +1389,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/DataSourcesSectionTreeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/DataSourcesSectionTreeImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/section/VariableSectionTreeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="49" column="19" lean-forward="false" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1169#1170#0" expanded="true" />
-            <element signature="e#1196#1197#0" expanded="true" />
-            <element signature="e#1243#1244#0" expanded="true" />
-            <element signature="e#1270#1271#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1593,9 +1404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1604,7 +1412,7 @@
         <state relative-caret-position="225">
           <caret line="60" column="59" lean-forward="false" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1614,15 +1422,8 @@
         <state relative-caret-position="369">
           <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1051#1052#0" expanded="true" />
-            <element signature="e#1077#1078#0" expanded="true" />
-            <element signature="e#1146#1147#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
-            <element signature="e#1291#1292#0" expanded="true" />
-            <element signature="e#1327#1328#0" expanded="true" />
-            <element signature="e#1388#1389#0" expanded="true" />
-            <element signature="e#1419#1420#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1077#1078#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1632,8 +1433,8 @@
         <state relative-caret-position="150">
           <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
           <folding>
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="false" />
+            <element signature="e#668#669#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1643,42 +1444,43 @@
         <state relative-caret-position="129">
           <caret line="16" column="77" lean-forward="false" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
           <folding>
-            <element signature="e#1022#1023#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="false" />
+            <element signature="e#1062#1063#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/MultilineStringLiteralImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="225">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#930#931#0" expanded="false" />
+            <element signature="e#982#983#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/NumberLiteralTreeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="195">
           <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1331#1332#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1331#1332#0" expanded="false" />
+            <element signature="e#1373#1374#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/StringLiteralTreeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="150">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#622#623#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1687,28 +1489,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#487#488#0" expanded="false" />
+            <element signature="e#517#518#0" expanded="false" />
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#603#604#0" expanded="false" />
+            <element signature="e#649#650#0" expanded="false" />
+            <element signature="e#676#677#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/TreeFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
+        <state relative-caret-position="450">
           <caret line="48" column="3" lean-forward="false" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#4889#0" expanded="false" />
+            <element signature="e#3445#3446#0" expanded="false" />
+            <element signature="e#3503#3504#0" expanded="false" />
+            <element signature="e#4356#4357#0" expanded="false" />
+            <element signature="e#4413#4414#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/AlternativeListLiteralTreeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="210">
           <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#467#468#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#0#676#0" expanded="false" />
+            <element signature="e#551#552#0" expanded="false" />
+            <element signature="e#580#581#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="false" />
+            <element signature="e#672#673#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1725,10 +1541,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/api/literal/AlternativeListLiteralTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="285">
+          <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#720#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1738,27 +1554,42 @@
         <state relative-caret-position="165">
           <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/typed/impl/literal/ObjectLiteralTreeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="50" column="46" lean-forward="true" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+        <state relative-caret-position="555">
+          <caret line="50" column="46" lean-forward="false" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2656#2657#0" expanded="true" />
-            <element signature="e#2698#2699#0" expanded="true" />
+            <element signature="e#1214#1215#0" expanded="false" />
+            <element signature="e#1247#1248#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/typed/TestUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/typed/JsonRegExps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="109" lean-forward="false" selection-start-line="21" selection-start-column="109" selection-end-line="21" selection-end-column="109" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/typed/JsonGrammarTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+        <state relative-caret-position="235">
+          <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

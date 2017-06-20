@@ -93,6 +93,8 @@ public class JsonGrammarTest {
         checkStringLiteral("\"\\t\"");
         checkStringLiteral("\"\\uFFFF\"");
         checkStringLiteral("\"string\"");
+        checkStringLiteral("\"string ${\"test\" as \"}\"");
+
     }
 
     @Test
