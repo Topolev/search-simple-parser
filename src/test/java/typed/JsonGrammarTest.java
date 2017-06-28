@@ -42,19 +42,23 @@ import static typed.TestUtils.createParser;
 
 public class JsonGrammarTest {
 
-  /*private static ActionParser<Tree> parser = new ActionParser<>(
-      StandardCharsets.UTF_8,
-      JsonLexer.createGrammarBuilder(),
-      typed.JsonGrammar.class,
-      new TreeFactory(),
-      new JsonNodeBuilder(),
-      JsonLexer.BOOLEAN_LITERAL);*/
-
+    /*private static ActionParser<Tree> parser = new ActionParser<>(
+        StandardCharsets.UTF_8,
+        JsonLexer.createGrammarBuilder(),
+        typed.JsonGrammar.class,
+        new TreeFactory(),
+        new JsonNodeBuilder(),
+        JsonLexer.BOOLEAN_LITERAL);*/
+    private static String comments = " /*\n multiline comment \n*/\n     # line comment \n";
 
     @Test
     public void booleanLiteral() {
         checkBoolenLiteral("true", true);
         checkBoolenLiteral("false", false);
+
+        // include comments
+        checkBoolenLiteral("true" + comments, true);
+        checkBoolenLiteral("false" + comments, false);
     }
 
     @Test
@@ -75,26 +79,36 @@ public class JsonGrammarTest {
 
         // Oct
         checkNumberLiteral("077", (float) 077);
+
+        //include comments
+        checkNumberLiteral("077" + comments, (float) 077);
+        checkNumberLiteral("1E2" + comments, 100f);
+        checkNumberLiteral("0.0123456789" + comments, 0.0123456789f);
+
     }
+
+    String str = "asd\\";
 
     @Test
     public void stringLiteral() {
-        checkStringLiteral("\"test\"");
-        checkStringLiteral("\"\"");
-        checkStringLiteral("\"\\\"\"");
-        checkStringLiteral("\"\"");
-        checkStringLiteral("\"\\\"\"");
-        checkStringLiteral("\"\\\\\"");
-        checkStringLiteral("\"\\/\"");
-        checkStringLiteral("\"\\b\"");
-        checkStringLiteral("\"\\f\"");
-        checkStringLiteral("\"\\n\"");
-        checkStringLiteral("\"\\r\"");
-        checkStringLiteral("\"\\t\"");
-        checkStringLiteral("\"\\uFFFF\"");
-        checkStringLiteral("\"string\"");
-        checkStringLiteral("\"string ${\"test\" as \"}\"");
+        checkStringLiteral("\"test\"","test");
+        checkStringLiteral("\"\"", "");
+        checkStringLiteral("\"\\\"\"","\\\"");
+        checkStringLiteral("\"\\\\\"", "\\\\");
+        checkStringLiteral("\"\\/\"", "\\/");
+        checkStringLiteral("\"\\b\"", "\\b");
+        checkStringLiteral("\"\\f\"","\\f");
+        checkStringLiteral("\"\\n\"", "\\n");
+        checkStringLiteral("\"\\r\"", "\\r");
+        checkStringLiteral("\"\\t\"","\\t");
+        checkStringLiteral("\"\\uFFFF\"", "\\uFFFF");
+        checkStringLiteral("\"string\"", "string");
+        checkStringLiteral("\"string ${\"test\" as \"}\"", "string ${\"test\" as \"}");
 
+        //include comments
+        checkStringLiteral("\"test\"" + comments, "test");
+        checkStringLiteral("\"string ${\"test\" as \"}\"" + comments, "string ${\"test\" as \"}");
+        checkStringLiteral("\"\\\"\"" + comments,"\\\"");
     }
 
     @Test
@@ -198,9 +212,9 @@ public class JsonGrammarTest {
     }
 
     @Test
-    public void objectLiteral(){
+    public void objectLiteral() {
         ActionParser<Tree> parser = createParser(JsonLexer.OBJECT_LITERAL);
-        ObjectLiteralTree object =(ObjectLiteralTree) parser.parse("{test2 = true}");
+        ObjectLiteralTree object = (ObjectLiteralTree) parser.parse("{test2 = true}");
 
         assertThat(object.is(Tree.Kind.OBJECT_LITERAL)).isTrue();
         assertThat(object.properties().size()).isEqualTo(1);

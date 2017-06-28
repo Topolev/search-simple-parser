@@ -14,6 +14,7 @@ import static org.fest.assertions.Assertions.assertThat;
 
 public class TestUtils {
 
+
     public static ActionParser<Tree> createParser(JsonLexer root) {
         return new ActionParser<>(
                 StandardCharsets.UTF_8,
@@ -38,12 +39,12 @@ public class TestUtils {
         assertThat(((NumberLiteralTree)numberLiteral).value()).isEqualTo(expectedValue);
     }
 
-    public static void checkStringLiteral(String input){
+    public static void checkStringLiteral(String input, String expectedValue){
         ActionParser<Tree> parser = createParser(JsonLexer.STRING_LITERAL);
         Tree stringLiteral = parser.parse(input);
 
         assertThat(stringLiteral.is(Tree.Kind.STRING_LITERAL)).isTrue();
-        assertThat(((StringLiteralTree)stringLiteral).value()).isEqualTo(input.substring(1, input.length()-1));
+        assertThat(((StringLiteralTree)stringLiteral).value()).isEqualTo(expectedValue);
     }
 
     public static void checkMultilineStringLiteral(String input, String expectedMarker, String expectedString){

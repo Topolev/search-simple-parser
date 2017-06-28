@@ -82,8 +82,8 @@ public enum JsonLexer implements GrammarRuleKey {
 
     b.rule(EOF).is(b.token(GenericTokenType.EOF, b.endOfInput()));*/
 
-        b.rule(TRUE).is("true", WHITESPACE);
-        b.rule(FALSE).is("false", WHITESPACE);
+        b.rule(TRUE).is(b.skippedTrivia(WHITESPACE), "true", WHITESPACE);
+        b.rule(FALSE).is(b.skippedTrivia(WHITESPACE), "false", WHITESPACE);
 
         b.rule(NUMBER).is(b.regexp(JsonRegExps.NUMERIC_LITERAL), WHITESPACE);
         b.rule(STRING).is(b.regexp(JsonRegExps.STRING_LITERAL), WHITESPACE);
@@ -92,7 +92,10 @@ public enum JsonLexer implements GrammarRuleKey {
         b.rule(WORD).is(b.regexp(JsonRegExps.WORD_LITERAL), WHITESPACE);
 
 
-        b.rule(WHITESPACE).is(b.regexp("[ \n\r\t\f]*+"));
+        //b.rule(WHITESPACE).is(b.regexp("[ \n\r\t\f]*+"));
+        b.rule(WHITESPACE).is(b.regexp("[ \\n\\t\\r\\f]*(?>(#[^\\n]*[ \\n]*)|/\\*([^\\*]|[\\r\\n]|(\\*+([^\\*/])))*\\*/[ \\n\\t\\r\\f]*)*+"));
+
+
         b.rule(EOF).is(b.token(GenericTokenType.EOF, b.endOfInput()));
 
         b.setRootRule(root);

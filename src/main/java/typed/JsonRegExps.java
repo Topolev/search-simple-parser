@@ -19,7 +19,9 @@ public class JsonRegExps {
             + "|-?+[0-9]++"
             + ")";
 
-    public static final String STRING_LITERAL = "(?:\"(?>(\\$\\{[^}]*\\})|(((?>\\\\[\\s\\S])|[^\"\\$])*))*+\")";
+
+    // Testing this regExp: https://regex101.com/r/jD8D0j/4
+    public static final String STRING_LITERAL = "\"(?>\\$\\{[^}]*\\}|\\\\\\\\|\\\\\"|[^\"])*\"";
 
     public static final String WORD_LITERAL = "(?:[\\w]+(?==)|(?<![\\S\"])([^=\"\\d\\s][^=\"\\s]+)(?![\\S\"]))";
 
